@@ -1,0 +1,9 @@
+streamlit==1.36.0
+embedchain
+poppler-utils
+dropbox
+sentence-transformers
+pdf2image
+pytesseract
+docx2txt
+python-poppler
