@@ -4,8 +4,7 @@ import os
 import time
 from embedchain import App
 os.environ["HUGGINGFACE_ACCESS_TOKEN"] = "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"
-os.environ[
-    "DROPBOX_ACCESS_TOKEN"] = "sl.B32mrlpEG57gACvu37rmz_rI7qAw302nOiOMEivPQM0FWUTysUXZ7TlVevALI5ecXXL7jSdh-UOS2u2kyF7MMTrMg3IyE2MQm8SRm3FjgiqgzPygvfuNvGhe9dtOI92QYfGBsjEcnolPA9Ylpz7RcOY"
+
 config = {
     'llm': {
         'provider': 'huggingface',
@@ -26,7 +25,7 @@ with st.sidebar:
     st.title("HIT AI")
     st.caption("🚀 Powered by Afrinity Technologies!")
     # huggingface_access_token = st.text_input("Hugging face Token", key="chatbot_api_key", type="password")
-    # dropbox_access_token = st.text_input("Dropbox Access Token", key="dropbox_api_key", type="password")
+    dropbox_access_token = st.text_input("Dropbox Access Token", key="dropbox_api_key", type="password")
 
     if st.button("➕Start New Chat"):
       st.session_state.messages = [
