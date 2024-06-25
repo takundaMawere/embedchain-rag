@@ -3,7 +3,25 @@ import streamlit as st
 import os
 import time
 from embedchain import App
-
+os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
+os.environ[
+    "DROPBOX_ACCESS_TOKEN"] = st.session_state.dropbox_api_key
+config = {
+    'llm': {
+        'provider': 'huggingface',
+        'config': {
+            'model': 'mistralai/Mistral-7B-Instruct-v0.2',
+            'top_p': 0.5
+        }
+    },
+    'embedder': {
+        'provider': 'huggingface',
+        'config': {
+            'model': 'sentence-transformers/all-mpnet-base-v2'
+        }
+    }
+}
+app = App.from_config(config=config)
 with st.sidebar:
     st.title("HIT AI")
     st.caption("🚀 Powered by Afrinity Technologies!")
@@ -19,30 +37,11 @@ with st.sidebar:
       ]
       st.experimental_rerun()
     if st.button("Reload Knowledge Base"):
-        import dropbox
-        import os
-        from embedchain import App
-
         # Replace this with your HF token
         os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
         os.environ[
             "DROPBOX_ACCESS_TOKEN"] = st.session_state.dropbox_api_key
-        config = {
-            'llm': {
-                'provider': 'huggingface',
-                'config': {
-                    'model': 'mistralai/Mistral-7B-Instruct-v0.2',
-                    'top_p': 0.5
-                }
-            },
-            'embedder': {
-                'provider': 'huggingface',
-                'config': {
-                    'model': 'sentence-transformers/all-mpnet-base-v2'
-                }
-            }
-        }
-        app = App.from_config(config=config)
+
         # Dropbox API access token
         # if __name__ == '__main__':
             # ACCESS_TOKEN = st.session_state.dropbox_api_key
