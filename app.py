@@ -38,8 +38,8 @@ with st.sidebar:
     if st.button("Reload Knowledge Base"):
         # Replace this with your HF token
         # os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
-        # os.environ[
-        #     "DROPBOX_ACCESS_TOKEN"] = st.session_state.dropbox_api_key
+        os.environ[
+            "DROPBOX_ACCESS_TOKEN"] = st.session_state.dropbox_api_key
 
         # Dropbox API access token
         # if __name__ == '__main__':
