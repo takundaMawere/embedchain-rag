@@ -21,10 +21,6 @@ with st.sidebar:
     if st.button("Reload Knowledge Base"):
         import dropbox
         import os
-        from pdf2image import convert_from_path
-        import pytesseract
-        import sentence_transformers
-        import poppler
         from embedchain import App
 
         # Replace this with your HF token
@@ -48,18 +44,18 @@ with st.sidebar:
         }
         app = App.from_config(config=config)
         # Dropbox API access token
-        if __name__ == '__main__':
-            ACCESS_TOKEN = st.session_state.dropbox_api_key
-
-            # Create a Dropbox client
-            dbx = dropbox.Dropbox(ACCESS_TOKEN)
-
-            # Dropbox folder path
-            dropbox_folder_path = '/test2'
-
-            # Local folder to save downloaded PDFs
-            local_folder_path = './downloaded_pdfs'
-            os.makedirs(local_folder_path, exist_ok=True)
+        # if __name__ == '__main__':
+            # ACCESS_TOKEN = st.session_state.dropbox_api_key
+            #
+            # # Create a Dropbox client
+            # dbx = dropbox.Dropbox(ACCESS_TOKEN)
+            #
+            # # Dropbox folder path
+            # dropbox_folder_path = '/test2'
+            #
+            # # Local folder to save downloaded PDFs
+            # local_folder_path = './downloaded_pdfs'
+            # os.makedirs(local_folder_path, exist_ok=True)
 
 
             # List and download PDFs
@@ -104,13 +100,13 @@ with st.sidebar:
             #     pdf_texts.append((pdf_file, text))
             #
             # # section 3
-            app = App.from_config(config=config)
+            # app = App.from_config(config=config)
             # Add extracted texts to EmbedChain
             # for pdf_file, text in pdf_texts:
             #     print("something is being added \n")
             #     app.add(text, data_type='text')
 
-            app.add("/gen2", data_type="dropbox")
+        app.add("/gen2", data_type="dropbox")
             # Query the embedded texts
 
 
