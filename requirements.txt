@@ -8,3 +8,4 @@ pytesseract
 docx2txt
 pysqlite3-binary
 langchain_huggingface
+tesseract-ocr
