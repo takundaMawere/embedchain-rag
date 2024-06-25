@@ -3,9 +3,9 @@ import streamlit as st
 import os
 import time
 from embedchain import App
-os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
+os.environ["HUGGINGFACE_ACCESS_TOKEN"] = "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"
 os.environ[
-    "DROPBOX_ACCESS_TOKEN"] = st.session_state.dropbox_api_key
+    "DROPBOX_ACCESS_TOKEN"] = "sl.B30qYUOYJJ_Af_EdA_iFufpd6Y1SRM2qiWg44e-EjpBqCApSvy-Nk6HIzRluRig3KBcniSjwB4tTl8aF8MyV7VU-iTEhKWZs5zJ25juYhaF7Wt5iUIjcyw7jw8DBpUF109zYXCqBLUkBBYvkQcJMIRc"
 config = {
     'llm': {
         'provider': 'huggingface',
@@ -38,9 +38,9 @@ with st.sidebar:
       st.experimental_rerun()
     if st.button("Reload Knowledge Base"):
         # Replace this with your HF token
-        os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
-        os.environ[
-            "DROPBOX_ACCESS_TOKEN"] = st.session_state.dropbox_api_key
+        # os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
+        # os.environ[
+        #     "DROPBOX_ACCESS_TOKEN"] = st.session_state.dropbox_api_key
 
         # Dropbox API access token
         # if __name__ == '__main__':
