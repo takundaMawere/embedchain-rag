@@ -30,7 +30,7 @@ with st.sidebar:
         # Replace this with your HF token
         os.environ["HUGGINGFACE_ACCESS_TOKEN"] = "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"
         os.environ[
-            "DROPBOX_ACCESS_TOKEN"] = "sl.B33ebXfSKiZnEZqLG0AUm5YmrC1UqPyBE6bPJcDJN2e6G7GLhw_MvjqH1yDXR14niQQgFc3NieFLDuWnTPCEfPmeX7ojb7GxWgx8naDvV1GAz4QdGHtY9pATTgeN-PD6uNTPniSRzr7QYbH6oSCegoI"
+            "DROPBOX_ACCESS_TOKEN"] = "sl.B334qo0yLSavMBOp8E2OBWuacb36NpojmDckcvqPaYGLsM3jq5tOPSjNd8hhqOvz-lQoAk0895QZ1kQCKSGnrLUD8DBvNiaWGHloKrArH5umm6kzOItkJWxpR9YMTXnY9eY8LvKKw0eIQFvB8wG5DH4"
         config = {
             'llm': {
                 'provider': 'huggingface',
@@ -49,7 +49,7 @@ with st.sidebar:
         app = App.from_config(config=config)
         # Dropbox API access token
         if __name__ == '__main__':
-            ACCESS_TOKEN = 'sl.B33ebXfSKiZnEZqLG0AUm5YmrC1UqPyBE6bPJcDJN2e6G7GLhw_MvjqH1yDXR14niQQgFc3NieFLDuWnTPCEfPmeX7ojb7GxWgx8naDvV1GAz4QdGHtY9pATTgeN-PD6uNTPniSRzr7QYbH6oSCegoI'
+            ACCESS_TOKEN = 'sl.B334qo0yLSavMBOp8E2OBWuacb36NpojmDckcvqPaYGLsM3jq5tOPSjNd8hhqOvz-lQoAk0895QZ1kQCKSGnrLUD8DBvNiaWGHloKrArH5umm6kzOItkJWxpR9YMTXnY9eY8LvKKw0eIQFvB8wG5DH4'
 
             # Create a Dropbox client
             dbx = dropbox.Dropbox(ACCESS_TOKEN)
