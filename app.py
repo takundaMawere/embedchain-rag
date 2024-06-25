@@ -5,7 +5,7 @@ import time
 from embedchain import App
 os.environ["HUGGINGFACE_ACCESS_TOKEN"] = "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"
 os.environ[
-    "DROPBOX_ACCESS_TOKEN"] = "sl.B30qYUOYJJ_Af_EdA_iFufpd6Y1SRM2qiWg44e-EjpBqCApSvy-Nk6HIzRluRig3KBcniSjwB4tTl8aF8MyV7VU-iTEhKWZs5zJ25juYhaF7Wt5iUIjcyw7jw8DBpUF109zYXCqBLUkBBYvkQcJMIRc"
+    "DROPBOX_ACCESS_TOKEN"] = "sl.B32mrlpEG57gACvu37rmz_rI7qAw302nOiOMEivPQM0FWUTysUXZ7TlVevALI5ecXXL7jSdh-UOS2u2kyF7MMTrMg3IyE2MQm8SRm3FjgiqgzPygvfuNvGhe9dtOI92QYfGBsjEcnolPA9Ylpz7RcOY"
 config = {
     'llm': {
         'provider': 'huggingface',
