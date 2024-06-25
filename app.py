@@ -25,8 +25,8 @@ app = App.from_config(config=config)
 with st.sidebar:
     st.title("HIT AI")
     st.caption("🚀 Powered by Afrinity Technologies!")
-    huggingface_access_token = st.text_input("Hugging face Token", key="chatbot_api_key", type="password")
-    dropbox_access_token = st.text_input("Dropbox Access Token", key="dropbox_api_key", type="password")
+    # huggingface_access_token = st.text_input("Hugging face Token", key="chatbot_api_key", type="password")
+    # dropbox_access_token = st.text_input("Dropbox Access Token", key="dropbox_api_key", type="password")
 
     if st.button("➕Start New Chat"):
       st.session_state.messages = [
