@@ -154,7 +154,7 @@ if prompt := st.chat_input("Ask me anything!"):
     #     st.stop()
 
     # os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
-    os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
+    # os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
     # app = App.from_config(config=config)
 
     if prompt.startswith("/add"):
