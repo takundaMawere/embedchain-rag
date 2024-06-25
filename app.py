@@ -11,7 +11,7 @@ with st.sidebar:
     st.title("HIT AI")
     st.caption("🚀 Powered by Afrinity Technologies!")
     huggingface_access_token = st.text_input("Hugging face Token", key="chatbot_api_key", type="password")
-    dropbox_access_token = st.text_input("Dropbox Access Token", type="password")
+    dropbox_access_token = st.text_input("Dropbox Access Token", key="dropbox_api_key", type="password")
 
     if st.button("➕Start New Chat"):
       st.session_state.messages = [
@@ -31,9 +31,9 @@ with st.sidebar:
         from embedchain import App
 
         # Replace this with your HF token
-        os.environ["HUGGINGFACE_ACCESS_TOKEN"] = huggingface_access_token
+        os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
         os.environ[
-            "DROPBOX_ACCESS_TOKEN"] = dropbox_access_token
+            "DROPBOX_ACCESS_TOKEN"] = st.session_state.dropbox_api_key
         config = {
             'llm': {
                 'provider': 'huggingface',
@@ -52,7 +52,7 @@ with st.sidebar:
         app = App.from_config(config=config)
         # Dropbox API access token
         if __name__ == '__main__':
-            ACCESS_TOKEN = dropbox_access_token
+            ACCESS_TOKEN = st.session_state.dropbox_api_key
 
             # Create a Dropbox client
             dbx = dropbox.Dropbox(ACCESS_TOKEN)
@@ -162,7 +162,7 @@ if prompt := st.chat_input("Ask me anything!"):
     #     st.stop()
 
     # os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
-    os.environ["HUGGINGFACE_ACCESS_TOKEN"] = huggingface_access_token
+    os.environ["HUGGINGFACE_ACCESS_TOKEN"] = st.session_state.chatbot_api_key
     # app = App.from_config(config=config)
 
     if prompt.startswith("/add"):
