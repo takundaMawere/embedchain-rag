@@ -7,10 +7,8 @@ os.environ["GOOGLE_API_KEY"] = "AIzaSyDRiI5PgPjGCoWOjOZxSf0a5P_6lirLPQc"
 assistant = AIAssistant(
     name="HIT AI Assistant",
     instructions="Your name is HIT AI Assistant. Write about the Harare Institute of Technology (HIT) only. Avoid mentioning any other universities or institutes. Ask me anything related to HIT.",
-    yaml_path="config.yaml")
-
-if __name__ == "__main__":
-    assistant.data_sources = [{"source": "./Knowledge", "data_type": "directory"},{"source": "https://www.hit.ac.zw/post-sitemap.xml", "data_type": "sitemap"},{"source": "https://www.hit.ac.zw/page-sitemap.xml", "data_type": "sitemap"}]
+    yaml_path="config.yaml",
+    data_sources = [{"source": "./Knowledge", "data_type": "directory"},{"source": "https://www.hit.ac.zw/post-sitemap.xml", "data_type": "sitemap"},{"source": "https://www.hit.ac.zw/page-sitemap.xml", "data_type": "sitemap"}])
 # os.environ["HUGGINGFACE_ACCESS_TOKEN"] = "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"
 #
 # config = {
