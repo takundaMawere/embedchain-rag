@@ -2,7 +2,7 @@ import streamlit as st
 import os
 # from rag import assistant
 from embedchain.store.assistants import AIAssistant
-os.environ["GOOGLE_API_KEY"] = ""
+os.environ["GOOGLE_API_KEY"] = "AIzaSyDRiI5PgPjGCoWOjOZxSf0a5P_6lirLPQc"
 assistant = AIAssistant(assistant_id="aa9af753-e2ac-403d-b0e3-121491f0eeaa")
 def extract_answer(response):
     # Split the response by lines
