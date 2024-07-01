@@ -1,24 +1,13 @@
 import streamlit as st
-import os
-# from rag import assistant
 from embedchain.store.assistants import AIAssistant
-os.environ["GOOGLE_API_KEY"] = "AIzaSyDRiI5PgPjGCoWOjOZxSf0a5P_6lirLPQc"
-assistant = AIAssistant(assistant_id="aa9af753-e2ac-403d-b0e3-121491f0eeaa")
-def extract_answer(response):
-    # Split the response by lines
-    lines = response.split('\n')
+from rag import assistant
+import os
+import uuid
 
-    # Find the line that starts with "Answer:" to get the answer section
-    answer_index = next(i for i, line in enumerate(lines) if line.startswith("Answer:"))
+os.environ["GOOGLE_API_KEY"] = "AIzaSyAYlgd7yepzspC78xfMWm0fBHUT3j6ZPuE"
 
-    # Return the part of the response starting from the answer index + 1 (to skip "Answer:")
-    answer = '\n'.join(lines[answer_index + 1:])
-
-    return answer.strip()
-
-
-st.title("HIT AI")
-st.caption("🚀 Powered by Afrinity Technologies!")
+st.title("Alex")
+st.caption("🚀 Powered by afrAInity Technologies!")
 
 if "messages" not in st.session_state:
     st.session_state.messages = [
@@ -65,4 +54,3 @@ if prompt := st.chat_input("Ask me anything!"):
         st.write(full_response)
         # msg_placeholder.markdown(full_response)
         st.session_state.messages.append({"role": "assistant", "content": full_response})
-
