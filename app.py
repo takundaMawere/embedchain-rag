@@ -3,7 +3,7 @@ from embedchain.store.assistants import AIAssistant
 from rag import assistant
 import os
 import uuid
-
+import chromadb
 os.environ["GOOGLE_API_KEY"] = "AIzaSyAYlgd7yepzspC78xfMWm0fBHUT3j6ZPuE"
 
 st.title("Alex")
