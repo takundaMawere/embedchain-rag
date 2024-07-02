@@ -3,9 +3,6 @@ from embedchain.store.assistants import AIAssistant
 from rag import assistant
 import os
 import uuid
-import chromadb
-from chromadb.config import Settings
-client = chromadb.Client(Settings(anonymized_telemetry=False))
 os.environ["GOOGLE_API_KEY"] = "AIzaSyAYlgd7yepzspC78xfMWm0fBHUT3j6ZPuE"
 
 st.title("Alex")
